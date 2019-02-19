@@ -2,18 +2,21 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import CreateItem from "./CreateArtist/createArtist";
+import CreateArtist from "./CreateArtist/createArtist";
 import { Link, Route, Switch } from "react-router-dom";
-import ListItem from "./ListArtist/ListArtist";
-import UpdateSong from './UpdateSong/UpdateSong'
+import ListArtist from "./ListArtist/ListArtist";
+//import UpdateSong from './UpdateSong/UpdateSong'
+
 
 class App extends Component {
-  state = {
-    title: this.title,
-    url: this.url,
-    description: this.description
-  };
-
+  constructor(){
+    super()
+  this.state = {
+    songs: this.songs,
+    Artist: this.Artist
+  
+  }
+}
   render() {
     return (
       <div className="App">
@@ -36,15 +39,16 @@ class App extends Component {
             <Route
               path="/createArtist"
               render={props => (
-                <CreateItem
+                <CreateArtist
                   {...this.state}
                   {...props}
-                  stocks={this.props.stocks}
+                  songs={this.props.songs}
                 />
               )}
             />
 
-            <Route path="/listItems" Component={ListItem} />
+            <Route path="/listArtist" Component={ListArtist} />
+            
           </Switch>
         </main>
       </div>

@@ -14,7 +14,7 @@ class CreateArtist extends Component {
                     </FormGroup>
                     <FormGroup bsSize="large">
                         <label>Genre</label>
-                        <FormControl type="text" placeholder="Url" />
+                        <FormControl type="text" placeholder="Genre" />
                         <p>
                             <Button className="button" bsStyle="primary">submit</Button>
                         </p>

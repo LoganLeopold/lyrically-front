@@ -4,11 +4,11 @@ import axios from "axios"
 
 
 class ListArtist extends Component {
-    sate = {
+    state = {
         ListArtist: []
     }
     componentDidMount() {
-        axios.get("http://localhost:3000/api/listArtist/")
+        axios.get("https://lyrically123.herokuapp.com/artists/")
             .then((res) => {
                 console.log(res)
                 this.setState({
@@ -20,16 +20,16 @@ class ListArtist extends Component {
             })
     }
     render() {
-        const listArtist = this.state.listArtist.map((listItem, index) => {
+        const listArtist = this.state.listArtist.map((listArtist, index) => {
             return (
                 <div key={index}>
                     <p>
-                        <Link to={`/listArtist/${listItem._id}`}>{listItem.title}</Link>>
+                        <Link to={`/listArtist/${listArtist._id}`}>{listArtist.title}</Link>>
                 </p>
-                    <Route path={`listArtist/${listItem._id}`}
+                    <Route path={`listArtist/${listArtist._id}`}
                         render={() => {
                             return (
-                                <p>{listItem.title}{listItem.url}{listItem.discription}{listItem.completetd}</p>
+                                <p>{listArtist.title}{listArtist.url}{listArtist.discription}{listArtist.completetd}</p>
                             )
                         }}
                     />
