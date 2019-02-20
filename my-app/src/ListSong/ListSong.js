@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 import UpdateSong from '../UpdateSong/UpdateSong'
-import axios from 'axios'
 
 class ListSong extends Component { 
 
 
     render() {
-        console.log(this.props.songs)
         let songList = this.props.songs.map ( song => {
         
         return (
@@ -15,7 +13,10 @@ class ListSong extends Component {
                 <h1>{song.title}</h1>
                 <h1>{song.artist}</h1>
                 <p>{song.lyrics}</p>
-                <Route path={`/${song._id}`} render={ (routerProps) => {<UpdateSong delete={this.props.delete} {...routerProps} {...this.state}/>} } />
+                <Link to={`/${song._id}`}>
+                <button>Change Lyrics</button>
+                </Link> 
+                <Route path={`/:id`} exact render={ (routerProps) => <UpdateSong delete={this.props.delete} {...routerProps} {...this.state}/>} />
             </div>
             
         )
