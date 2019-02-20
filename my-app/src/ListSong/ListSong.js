@@ -12,7 +12,7 @@ class ListSong extends Component {
             <h1>{song.title}</h1>
             <h1>{song.artist}</h1>
             <p>{song.lyrics}</p>
-            <Link to={`/${song._id}`}>
+            <Link to={`/songs/${song._id}`}>
               <button>Change Lyrics</button>
             </Link>
           </div>

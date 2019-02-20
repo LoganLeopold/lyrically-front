@@ -57,9 +57,9 @@ class App extends Component {
 
         <section className="form" />
         <main>
-          <Route path="/" exact render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
+          <Route path="/songs" exact render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
           <Route
-            path="/:id"
+            path="/songs/:id"
             exact
             render={routerProps => (
                 <UpdateSong
