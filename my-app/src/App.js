@@ -52,11 +52,22 @@ class App extends Component {
            <h3><Link to="/listArtist"> List </Link></h3> */}
         </header>
 
-        <h1>Song List!</h1>
+        <h1>Lyrically</h1>
 
         <section className="form" />
         <main>
-          <Route path="/" render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
+          <Route path="/" exact render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
+          <Route
+            path="/:id"
+            exact
+            render={routerProps => (
+              <UpdateSong
+                delete={this.props.delete}
+                {...routerProps}
+                {...this.state}
+              />
+            )}
+          />
         </main>
       </div>
     );
