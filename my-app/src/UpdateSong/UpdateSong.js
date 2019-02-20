@@ -5,17 +5,18 @@ import { Button } from 'react-bootstrap'
 import axios from 'axios'
 
 class UpdateSong extends Component {
-    constructor(){
-        super()
-        this.state={
-            songs:'',
-            artists:''
-        }
-    }
+    // constructor(){
+    //     super()
+    //     this.state={
+    //         songs:'',
+    //         artists:''
+    //     }
+    // }
 
     
-    handleChange = event => {
-        this.setState({ id: event.target.value });
+    handleSubmit = event => {
+        // this.setState({ id: event.target.value });
+        
       }
     
       render() {
@@ -23,13 +24,18 @@ class UpdateSong extends Component {
           
           <div>
             <h1>Update Song</h1>
-            <form onSubmit={this.handleSubmit}>
+            <form name='update' onSubmit={this.handleSubmit}>
               <label>
                 Person ID:
-                <input type="text" name="id" onChange={this.handleChange} />
               </label>
+              <input type="text" name="id" onChange={this.handleChange} />
               <button type="submit">Delete</button>
             </form>
+
+            <form>
+            <button type='submit' name={this.props.match.params.id} onClick={this.props.delete}>Delete this Note</button>
+            </form>
+
           </div>
         )
       }

@@ -21,7 +21,7 @@ class ListSong extends Component {
     });
     return (
       <div>
-        <h2>Hello</h2>
+          <h1>Song List</h1>
         {songList}
       </div>
     );

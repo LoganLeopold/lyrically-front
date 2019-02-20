@@ -32,9 +32,10 @@ class App extends Component {
     event.preventDefault();
     console.log(event.target.name);
     axios
-      .delete(`https://lyrically123.herokuapp.com/${event.target.key}`)
-      .then(() => {
-        window.location = "/";
+      .delete(`https://lyrically123.herokuapp.com/songs/${event.target.name}`)
+      .then((res) => {
+        console.log(res.data);
+        console.log('Song deleted');
       });
   }
 
@@ -61,8 +62,8 @@ class App extends Component {
             path="/:id"
             exact
             render={routerProps => (
-              <UpdateSong
-                delete={this.props.delete}
+                <UpdateSong
+                delete={this.delete}
                 {...routerProps}
                 {...this.state}
               />
