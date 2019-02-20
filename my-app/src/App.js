@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          Header
+        
           {/* <h3>  <a href="/">Home</a></h3>
           <Link
             to="/createArtist"

@@ -8,7 +8,7 @@ class ListArtist extends Component {
         ListArtist: []
     }
     componentDidMount() {
-        axios.get("http://localhost:3000/api/listArtist/")
+        axios.get("https://lyrically123.herokuapp.com/artists/")
             .then((res) => {
                 console.log(res)
                 this.setState({
