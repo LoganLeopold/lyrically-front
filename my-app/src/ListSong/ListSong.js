@@ -1,28 +1,10 @@
 import React, { Component } from 'react';
+import {Route} from 'react-router-dom'
+import UpdateSong from '../UpdateSong/UpdateSong'
 import axios from 'axios'
 
-class ListSong extends Component {
-    
+class ListSong extends Component { 
 
-    // constructor() {
-    //     super() 
-    //     this.state = {
-    //         ListArtist: []
-    //     }
-    // }
-
-    // componentDidMount() {
-    //     axios.get("https://lyrically123.herokuapp.com/songs")
-    //         .then((res) => {
-    //             console.log(res)
-    //             this.setState({
-    //                 ListArtist: res.data
-    //             })
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         })
-    // }
 
     render() {
         console.log(this.props.songs)
@@ -33,6 +15,7 @@ class ListSong extends Component {
                 <h1>{song.title}</h1>
                 <h1>{song.artist}</h1>
                 <p>{song.lyrics}</p>
+                <Route path={`/${song._id}`} render={ (routerProps) => {<UpdateSong delete={this.props.delete} {...routerProps} {...this.state}/>} } />
             </div>
             
         )

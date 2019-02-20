@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import axios from 'axios'
+import axios from "axios";
 
 import CreateItem from "./CreateArtist/createArtist";
 import { Link, Route, Switch } from "react-router-dom";
@@ -15,23 +15,33 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get("https://lyrically123.herokuapp.com/songs")
-        .then((res) => {
-            console.log(res)
-            this.setState({
-                songs: res.data
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-}
+    axios
+      .get("https://lyrically123.herokuapp.com/songs")
+      .then(res => {
+        console.log(res);
+        this.setState({
+          songs: res.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  delete(event) {
+    event.preventDefault();
+    console.log(event.target.name);
+    axios
+      .delete(`https://lyrically123.herokuapp.com/${event.target.key}`)
+      .then(() => {
+        window.location = "/";
+      });
+  }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        
           {/* <h3>  <a href="/">Home</a></h3>
           <Link
             to="/createArtist"
@@ -46,21 +56,7 @@ class App extends Component {
 
         <section className="form" />
         <main>
-          {/* <Switch> */}
-          <Route path='/' render={(routerProps) => <ListSong {...this.state}{...routerProps} />} />
-          {/* <Route
-              path="/createArtist"
-              render={props => (
-                <CreateItem
-                  {...this.state}
-                  {...props}
-                  stocks={this.props.stocks}
-                />
-              )}
-            /> */}
-
-          {/* <Route path="/listItems" Component={ListItem} /> */}
-          {/* </Switch> */}
+          <Route path="/" render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
         </main>
       </div>
     );

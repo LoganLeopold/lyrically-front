@@ -33,3 +33,6 @@ class CreateArtist extends Component {
 }
 
 export default CreateArtist;
+
+
+

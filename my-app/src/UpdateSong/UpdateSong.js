@@ -12,18 +12,10 @@ class UpdateSong extends Component {
             artists:''
         }
     }
+
+    
     handleChange = event => {
         this.setState({ id: event.target.value });
-      }
-    
-      handleSubmit = event => {
-        event.preventDefault();
-    
-        axios.delete(`https://lyrically123.herokuapp.com/songs/${this.state.id}`)
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-          })
       }
     
       render() {
