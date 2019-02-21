@@ -5,6 +5,7 @@ import { FormGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 import {Route} from 'react-router-dom'
+import './UpdateSong.css'
 
 
 class UpdateSong extends Component {
@@ -55,7 +56,7 @@ class UpdateSong extends Component {
     return (
       <div>
         <h1>Update Song</h1>
-        <form name="update">
+        <form className='top' name="update">
           <label>Lyrics:</label>
           <input
             className="lyricsInput"
