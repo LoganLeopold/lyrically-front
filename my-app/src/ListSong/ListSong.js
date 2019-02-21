@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
+import './ListSong.css'
 import UpdateSong from "../UpdateSong/UpdateSong";
 
 class ListSong extends Component {
   render() {
     let songList = this.props.songs.map(song => {
-      console.log(song);
+      // console.log(song);
       return (
         <div key={song._id}>
           <div>
