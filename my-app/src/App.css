@@ -1,6 +1,6 @@
-body{
+/* body{
   background:url('https://cdn3.vectorstock.com/i/1000x1000/43/72/music-note-background-white-vector-1174372.jpg')no-repeat
-}
+} */
 .App {
   text-align: center;
   
@@ -20,7 +20,36 @@ body{
   word-wrap: break-word;
 }
 
+<<<<<<< HEAD
+=======
+
+li{
+  list-style: none;
+  float: left;
+  margin: 20px;
+  font-weight: bold;
+  color: white;
+  
+  
+
+}
+.top{
+  border: 1px solid black;
+  background-color:  rgb(133, 168, 197);
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+
+}
+>>>>>>> 9acb5e780d5e3693c61c14a99686c0ecffb6ffed
 img{
   width: 10px;
   height: 10px;
+}
+Link{
+  
+    display: inline;
+    margin-right: 20px;
+    
 }

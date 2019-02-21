@@ -73,6 +73,7 @@ class App extends Component {
         {/* //! Create Artists Here LL */}
         <Route path='/create/artists' exact render={() => <CreateArtist />} />
         </main>
+      
       </div>
     );
   }

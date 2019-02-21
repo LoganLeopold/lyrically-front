@@ -46,7 +46,7 @@ class UpdateSong extends Component {
     return (
       <div>
         <h1>Update Song</h1>
-        <form className='top' name="update">
+        <form  name="update">
           <label>Lyrics:</label>
           <input className="lyricsInput"type="text" defaultValue={this.state.song.Lyrics} onChange={this.props.handleChange}
           />
