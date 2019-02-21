@@ -36,18 +36,6 @@ class UpdateSong extends Component {
     console.log('UpdateSong mounted')
   }
 
-  // componentDidUpdate () {
-  //   this.setState({
-
-  //   })
-  // }
-
-  // handleChange = event => {
-  //   this.setState({
-  //     songLyrics: event.target.value
-  //   });
-  // };
-
   handleClick = (event) => {
     event.preventDefault();
     console.log(event.target.name)
