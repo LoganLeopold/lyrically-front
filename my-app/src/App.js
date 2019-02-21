@@ -27,6 +27,7 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       });
+      console.log('App mounted')
   }
 
   delete(event) {
@@ -41,6 +42,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('app mounted')
     return (
       <div className="App">
         <h1>Lyrically</h1>
