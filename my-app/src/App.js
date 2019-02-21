@@ -10,10 +10,14 @@ import ListSong from "./ListSong/ListSong";
 import ListArtist from './ListArtist/ListArtist';
 
 class App extends Component {
-  state = {
+  constructor() {
+  super()
+  this.state = {
     songs: [],
-    artists: []
+    artists: [],
+    songLyrics: ''
   };
+}
 
   componentDidMount() {
     axios
@@ -30,6 +34,12 @@ class App extends Component {
       console.log('App mounted')
   }
 
+  handleChange = event => {
+    this.setState({
+      songLyrics: event.target.value
+    });
+  };
+
   delete(event) {
     event.preventDefault();
     console.log(event.target.name);
@@ -42,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('app mounted')
+    console.log('App rendered')
     return (
       <div className="App">
         <h1>Lyrically</h1>
@@ -50,7 +60,7 @@ class App extends Component {
         <main>
           <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
           <Route path="/artists" exact render={routerProps => <ListArtist {...this.state} {...routerProps} />}/>
-          <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} {...routerProps} {...this.state}/>}/>
+          <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} handleChange={this.handleChange} {...routerProps} {...this.state}/>}/>
         </main>
 
       </div>

@@ -12,9 +12,9 @@ class UpdateSong extends Component {
     super();
     this.state = {
       song: [],
-      songLyrics: ''
+      // songLyrics: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this)
   }
@@ -36,16 +36,22 @@ class UpdateSong extends Component {
     console.log('UpdateSong mounted')
   }
 
-  handleChange = event => {
-    this.setState({
-      songLyrics: event.target.value
-    });
-  };
+  // componentDidUpdate () {
+  //   this.setState({
+
+  //   })
+  // }
+
+  // handleChange = event => {
+  //   this.setState({
+  //     songLyrics: event.target.value
+  //   });
+  // };
 
   handleClick = (event) => {
     event.preventDefault();
     console.log(event.target.name)
-    axios.put(`https://lyrically123.herokuapp.com/songs/${event.target.name}`, {lyrics: this.state.songLyrics})
+    axios.put(`https://lyrically123.herokuapp.com/songs/${event.target.name}`, {Lyrics: this.props.songLyrics})
     .then (res => {
       console.log(res.data)
     })
@@ -66,8 +72,8 @@ class UpdateSong extends Component {
           <input
             className="lyricsInput"
             type="text"
-            defaultValue={this.state.song.lyrics}
-            onChange={this.handleChange}
+            defaultValue={this.state.song.Lyrics}
+            onChange={this.props.handleChange}
           />
           <button name={this.state.song._id} onClick={this.handleClick}>Update Lyrics</button>
         </form> 
