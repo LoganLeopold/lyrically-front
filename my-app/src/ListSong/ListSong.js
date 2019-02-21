@@ -8,10 +8,10 @@ class ListSong extends Component {
     let songList = this.props.songs.map(song => {
       // console.log(song);
       return (
-        <div key={song._id}>
+        <div className='songcard' key={song._id}>
           <div>
-            <h1>{song.title}</h1>
-            <h1>{song.artist}</h1>
+            <h1 className='songtitle'>{song.title}</h1>
+            <h1 className='songartist'>{song.artist}</h1>
             <p>{song.lyrics}</p>
             <Link to={`/songs/${song._id}`}>
               <button>Change Lyrics</button>
@@ -21,7 +21,7 @@ class ListSong extends Component {
       );
     });
     return (
-      <div>
+      <div className='toplist'>
           <h1>Song List</h1>
         {songList}
       </div>

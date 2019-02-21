@@ -5,9 +5,15 @@ body{
   text-align: center;
   
 }
-nav{
+.logo{
  
-  
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 160px;
+  height: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top:10px;
 
   
 }

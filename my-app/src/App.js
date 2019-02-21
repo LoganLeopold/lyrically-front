@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import './logo.jpeg'
+
 
 import axios from "axios";
 
@@ -55,8 +55,8 @@ class App extends Component {
          
           </Link>
           <ul>
-           <li><img src="./logo.jpeg" alt="music"/></li>
-           <li>  <a href="/">Home</a></li>
+         
+           <li className='logo'>  <a href="/">Lyrically</a></li>
            <li><Link to="/songs"> Songs </Link></li>
            <li><Link to="/artists"> Artists </Link></li>
            </ul>
