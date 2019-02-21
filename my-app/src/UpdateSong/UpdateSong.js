@@ -40,7 +40,8 @@ class UpdateSong extends Component {
   render() {
     let thisSong = [];
     this.props.songs.filter(song => {if (song._id === this.props.match.params.id) 
-      {thisSong.push(song);console.log(song.lyrics)}
+      {thisSong.push(song);
+      console.log(song.lyrics)}
     });
 
     return (
@@ -48,8 +49,7 @@ class UpdateSong extends Component {
         <h1>Update Song</h1>
         <form  name="update">
           <label>Lyrics:</label>
-          <input className="lyricsInput"type="text" defaultValue={this.state.song.Lyrics} onChange={this.props.handleChange}
-          />
+          <input className="lyricsInput"type="text" defaultValue={this.state.song.Lyrics} onChange={this.props.handleChange}/>
           <button name={this.state.song._id} onClick={this.handleClick}>Update Lyrics</button>
         </form> 
 

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route} from "react-router-dom";
 import UpdateSong from "./UpdateSong/UpdateSong";
 import ListSong from "./ListSong/ListSong";
 import ListArtist from './ListArtist/ListArtist';
-import CreateArtist from'./CreateArtist/CreateArtist'
+import CreateArtist from'./CreateArtist/createArtist'
 import CreateSong from './CreateSong/CreateSong'
 
 class App extends Component {
@@ -51,7 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      
+
         <Link to={'/songs/'}>Songs</Link>
         <br></br>
         <Link to={'/artists/'}>Artists</Link>
