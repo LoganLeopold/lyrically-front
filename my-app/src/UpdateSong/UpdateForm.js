@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
+import { FormControl } from "react-bootstrap";
+import { FormGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import axios from "axios";
+
 
 class UpdateForm extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      songs: [],
+      artists: []
+    }
+  }
+
+  
+
     render() {
         return (
             <div>
-                  <h1>Update Song</h1>
-        <form name="update" onSubmit={this.handleSubmit}>
-          <label>Lyrics:</label>
-          <input
-            className="lyricsInput"
-            type="text"
-            defaultValue={this.props.thisSong[0].lyrics}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Update Lyrics</button>
-        </form> 
+       
             </div>
         );
     }

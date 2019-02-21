@@ -11,23 +11,26 @@ class UpdateSong extends Component {
   constructor() {
     super();
     this.state = {
-      songLyrics: ""
+      song: []
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    // this.componentDidMount = this.componentDidMount.bind(this)
+    this.handleClick = this.handleClick.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
 
-  // componentDidMount() {
-
-  //   this.props.songs.filter(song => {
-  //     if (song._id === this.props.match.params.id) {
-  //       this.setState({
-  //         song: song
-  //       })
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    axios
+      .get(`https://lyrically123.herokuapp.com/songs/${this.props.params.match.id}`)
+      .then(res => {
+        console.log(res);
+        this.setState({
+          song: res.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
   handleChange = event => {
     this.setState({
@@ -35,31 +38,34 @@ class UpdateSong extends Component {
     });
   };
 
-  handleSubmit = (event) => {
+  handleClick = (event) => {
     console.log(this.props.params.match.id);
     event.preventDefault();
-    // axios.post(`https://lyrically123.herokuapp.com/songs/${this.props.params.match._id}`, {lyrics: this.state.songLyrics})
-    // .then (res => {
-    //   console.log(res.data)
-    // })
-    // .then (() => {
-    //   return <Redirect to='/songs' />
-    // })
+    axios.post(`https://lyrically123.herokuapp.com/songs/${this.props.params.match._id}`, {lyrics: this.state.songLyrics})
+    .then (res => {
+      console.log(res.data)
+    })
+    .then (() => {
+      return <Redirect to='/songs' />
+    })
   };
 
   render() {
-    let thisSong = [];
-
-    this.props.songs.filter(song => {
-      if (song._id === this.props.match.params.id) {
-        thisSong.push(song);
-        console.log(song.lyrics)
-      }
-    });
 
     return (
       <div>
-        <UpdateForm thisSong={thisSong} {...this.props} {...this.state} />
+        {/* <UpdateForm thisSong={thisSong} {...this.props} {...this.state} /> */}
+        <h1>Update Song</h1>
+        <form name="update">
+          <label>Lyrics:</label>
+          <input
+            className="lyricsInput"
+            type="text"
+            // defaultValue={this.state.song[0].lyrics}
+            onChange={this.handleChange}
+          />
+          <button onClick={this.handleClick}>Update Lyrics</button>
+        </form> 
 
         <form>
           <button
