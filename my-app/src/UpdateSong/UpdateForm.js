@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class UpdateForm extends Component {
-    render() {
-        return (
-            <div>
-                  <h1>Update Song</h1>
+  render() {
+    return (
+      <div>
+        <h1>Update Song</h1>
         <form name="update" onSubmit={this.handleSubmit}>
           <label>Lyrics:</label>
           <input
@@ -14,10 +14,10 @@ class UpdateForm extends Component {
             onChange={this.handleChange}
           />
           <button type="submit">Update Lyrics</button>
-        </form> 
-            </div>
-        );
-    }
+        </form>
+      </div>
+    );
+  }
 }
 
 export default UpdateForm;

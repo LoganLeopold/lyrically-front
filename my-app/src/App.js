@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 
-// import CreateItem from "./CreateArtist/createArtist";
 import { Link, Route, Switch } from "react-router-dom";
-// import ListItem from "./ListArtist/ListArtist";
 import UpdateSong from "./UpdateSong/UpdateSong";
 import ListSong from "./ListSong/ListSong";
 import ListArtist from './ListArtist/ListArtist';
@@ -12,18 +10,14 @@ import ListArtist from './ListArtist/ListArtist';
 class App extends Component {
   state = {
     songs: [],
-    artists: []
+    // artists: []
   };
 
   componentDidMount() {
-    axios
-      .get("https://lyrically123.herokuapp.com/songs")
+    axios.get("https://lyrically123.herokuapp.com/songs")
       .then(res => {
         // console.log(res);
-        this.setState({
-          songs: res.data
-        });
-      })
+        this.setState({songs: res.data});})
       .catch(err => {
         console.log(err);
       });
@@ -44,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Lyrically</h1>
-
+        
         <main>
           <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
           <Route path="/artists" exact render={routerProps => <ListArtist {...this.state} {...routerProps} />}/>

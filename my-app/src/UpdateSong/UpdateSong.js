@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { FormControl } from "react-bootstrap";
-import { FormGroup } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import axios from "axios";
-import {Route} from 'react-router-dom'
 import UpdateForm from './UpdateForm'
 
 class UpdateSong extends Component {
@@ -15,19 +10,7 @@ class UpdateSong extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.componentDidMount = this.componentDidMount.bind(this)
   }
-
-  // componentDidMount() {
-
-  //   this.props.songs.filter(song => {
-  //     if (song._id === this.props.match.params.id) {
-  //       this.setState({
-  //         song: song
-  //       })
-  //     }
-  //   });
-  // }
 
   handleChange = event => {
     this.setState({
@@ -49,12 +32,8 @@ class UpdateSong extends Component {
 
   render() {
     let thisSong = [];
-
-    this.props.songs.filter(song => {
-      if (song._id === this.props.match.params.id) {
-        thisSong.push(song);
-        console.log(song.lyrics)
-      }
+    this.props.songs.filter(song => {if (song._id === this.props.match.params.id) 
+      {thisSong.push(song);console.log(song.lyrics)}
     });
 
     return (
@@ -62,46 +41,11 @@ class UpdateSong extends Component {
         <UpdateForm thisSong={thisSong} {...this.props} {...this.state} />
 
         <form>
-          <button
-            type="submit"
-            name={this.props.match.params.id}
-            onClick={this.props.delete}
-          >
-            Delete this Note
-          </button>
+          <button type="submit" name={this.props.match.params.id} onClick={this.props.delete}>Delete</button>
         </form>
       </div>
     );
   }
-
-  // upDateDidMount
-  //     render() {
-  //         return (
-  //             <div className="UpdateSong">
-  //                 <form>
-  //                     <FormGroup bsSize="large">
-  //                         <label>Song</label>
-  //                         <FormControl type="text" placeholder="Song" />
-  //                     </FormGroup>
-  //                     <FormGroup bsSize="large">
-  //                         <label>Title</label>
-  //                         <FormControl type="text" placeholder="Title" />
-  //                         <FormGroup bsSize="large">
-  //                         <label>Lyrics</label>
-  //                         <FormControl type="text" placeholder="Lyric" />
-  //                         <p>
-  //                             <Button className="button" bsStyle="primary">update</Button>
-  //                         </p>
-  //                     </FormGroup>
-  //                     {/* <FormGroup bsSize="large">
-  //                         <label>Add to your Artist</label>
-  //                         <FormControl type="text" placeholder="Item or Task" />
-  //                         */}
-  //                     </FormGroup>
-  //                 </form>
-  //             </div>
-  //         );
-  //     }
 }
 
 export default UpdateSong;
