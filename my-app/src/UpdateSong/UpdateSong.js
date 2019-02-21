@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import UpdateForm from './UpdateForm'
-import { FormControl } from "react-bootstrap";
-import { FormGroup } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import axios from "axios";
-import {Route} from 'react-router-dom'
 import './UpdateSong.css'
-
+import axios from "axios";
+// import UpdateForm from './UpdateForm'
+// import { FormControl } from "react-bootstrap";
+// import { FormGroup } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
+// import {Route} from 'react-router-dom'
 
 class UpdateSong extends Component {
   constructor() {
@@ -49,11 +48,7 @@ class UpdateSong extends Component {
         <h1>Update Song</h1>
         <form className='top' name="update">
           <label>Lyrics:</label>
-          <input
-            className="lyricsInput"
-            type="text"
-            defaultValue={this.state.song.Lyrics}
-            onChange={this.props.handleChange}
+          <input className="lyricsInput"type="text" defaultValue={this.state.song.Lyrics} onChange={this.props.handleChange}
           />
           <button name={this.state.song._id} onClick={this.handleClick}>Update Lyrics</button>
         </form> 
