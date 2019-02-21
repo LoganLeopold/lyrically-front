@@ -5,6 +5,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import UpdateSong from "./UpdateSong/UpdateSong";
 import ListSong from "./ListSong/ListSong";
 import ListArtist from './ListArtist/ListArtist';
+import CreateSong from './CreateSong/CreateSong'
 
 class App extends Component {
   state = {
@@ -49,14 +50,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        
+          <nav className='top'>
           <Link to={'/songs/'}>Songs</Link>
           <br></br>
-          <Link to={'/artists/'}>Artists</Link>
+            <Link to={'/artists/'}>Artists</Link>
           <br></br>
-          <Link to={'/songs/new'}>Create New Song</Link>
+            <Link to={'/songs/new'}>Create New Song</Link>
           <br></br>
           <Link to={'/artists/new'}>Create New Artist</Link>
-          
+         
+          </nav>        
         <main>
           <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
           <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} handleChange={this.handleChange} {...routerProps} {...this.state}/>}/>
@@ -65,6 +69,7 @@ class App extends Component {
           <Route path="/artists" exact render={routerProps => <ListArtist {...this.state} {...routerProps} />}/>
           <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} {...routerProps} {...this.state}/>}/>
         </main>
+      
       </div>
     );
   }
