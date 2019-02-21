@@ -5,7 +5,7 @@ class UpdateForm extends Component {
         return (
             <div>
                   <h1>Update Song</h1>
-        {/* <form name="update" onSubmit={this.handleSubmit}>
+        <form name="update" onSubmit={this.handleSubmit}>
           <label>Lyrics:</label>
           <input
             className="lyricsInput"
@@ -14,7 +14,7 @@ class UpdateForm extends Component {
             onChange={this.handleChange}
           />
           <button type="submit">Update Lyrics</button>
-        </form>  */}
+        </form> 
             </div>
         );
     }
