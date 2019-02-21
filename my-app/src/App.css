@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+.lyricsInput {
+  height: 30vh;
+  word-wrap: break-word;
+}
+
+
