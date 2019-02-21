@@ -4,7 +4,7 @@ import UpdateSong from '../UpdateSong/UpdateSong'
 import axios from 'axios'
 
 class ListSong extends Component { 
-
+   
 
     render() {
         console.log(this.props.songs)
@@ -15,7 +15,7 @@ class ListSong extends Component {
                 <h1>{song.title}</h1>
                 <h1>{song.artist}</h1>
                 <p>{song.lyrics}</p>
-                <Route path={`/${song._id}`} render={ (routerProps) => {<UpdateSong delete={this.props.delete} {...routerProps} {...this.state}/>} } />
+             {/* <Route path={`/${song._id}`} render={ (routerProps) => {<UpdateSong delete={this.props.delete} {...routerProps} {...this.state}/>} } /> */}
             </div>
             
         )

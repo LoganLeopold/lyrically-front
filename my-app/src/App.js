@@ -42,22 +42,25 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          {/* <h3>  <a href="/">Home</a></h3>
+        <nav>
+          <h3>  <a href="/">Home</a></h3>
           <Link
             to="/createArtist"
             style={{ textDecoration: "none", color: "lightblue" }}
           >
-           <h3 className="new"> Create New Song</h3>
+         
           </Link>
-           <h3><Link to="/listArtist"> List </Link></h3> */}
+           <h3><Link to="/ListSongs"> Songs </Link></h3>
+           <h3><Link to="/listArtist"> Artists </Link></h3>
+           </nav>
         </header>
 
         <h1>Song List!</h1>
 
         <section className="form" />
-        <main>
+        {/* <main>
           <Route path="/" render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
-        </main>
+        </main> */}
       </div>
     );
   }
