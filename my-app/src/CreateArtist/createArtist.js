@@ -9,23 +9,16 @@ class CreateArtist extends Component {
             <div className="CreateArtist">
                 <form>
                     <FormGroup bsSize="large">
-                        <label>Title</label>
-                        <FormControl type="text" placeholder="Title" />
+                        <label>Name</label>
+                        <FormControl type="text" placeholder="" />
                     </FormGroup>
                     <FormGroup bsSize="large">
                         <label>Genre</label>
-                        <FormControl type="text" placeholder="Url" />
+                        <FormControl type="text" placeholder="" />
                         <p>
                             <Button className="button" bsStyle="primary">submit</Button>
                         </p>
                     </FormGroup>
-                    {/* <FormGroup bsSize="large">
-                        <label>Create your Artist</label>
-                        <FormControl type="text" placeholder="Item or Task" />
-                        <p>
-                            <Button className="button" bsStyle="primary">submit</Button>
-                        </p>
-                    </FormGroup> */}
                 </form>
             </div>
         );
