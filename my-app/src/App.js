@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 
-import CreateItem from "./CreateArtist/createArtist";
+// import CreateItem from "./CreateArtist/createArtist";
 import { Link, Route, Switch } from "react-router-dom";
-import ListItem from "./ListArtist/ListArtist";
+// import ListItem from "./ListArtist/ListArtist";
 import UpdateSong from "./UpdateSong/UpdateSong";
 import ListSong from "./ListSong/ListSong";
+import ListArtist from './ListArtist/ListArtist';
 
 class App extends Component {
   state = {
@@ -18,7 +19,7 @@ class App extends Component {
     axios
       .get("https://lyrically123.herokuapp.com/songs")
       .then(res => {
-        console.log(res);
+        // console.log(res);
         this.setState({
           songs: res.data
         });
@@ -42,34 +43,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          {/* <h3>  <a href="/">Home</a></h3>
-          <Link
-            to="/createArtist"
-            style={{ textDecoration: "none", color: "lightblue" }}
-          >
-           <h3 className="new"> Create New Song</h3>
-          </Link>
-           <h3><Link to="/listArtist"> List </Link></h3> */}
-        </header>
-
         <h1>Lyrically</h1>
 
-        <section className="form" />
         <main>
-          <Route path="/songs" exact render={routerProps => (<ListSong delete={this.delete} {...this.state} {...routerProps} />)}/>
-          <Route
-            path="/songs/:id"
-            exact
-            render={routerProps => (
-                <UpdateSong
-                delete={this.delete}
-                {...routerProps}
-                {...this.state}
-              />
-            )}
-          />
+          <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
+          <Route path="/artists" exact render={routerProps => <ListArtist {...this.state} {...routerProps} />}/>
+          <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} {...routerProps} {...this.state}/>}/>
         </main>
+
       </div>
     );
   }
