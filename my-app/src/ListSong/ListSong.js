@@ -10,8 +10,8 @@ class ListSong extends Component {
       return (
         <div className='songcard' key={song._id}>
           <div>
-            <h1 className='songtitle'>{song.title}</h1>
-            <h1 className='songartist'>{song.artist}</h1>
+            <h1 className='songtitle'>{song.Title}</h1>
+            <h1 className='songartist'>{song.Artist}</h1>
             <p>{song.lyrics}</p>
             <Link to={`/songs/${song._id}`}>
               <button>Change Lyrics</button>
