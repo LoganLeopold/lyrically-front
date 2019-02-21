@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import UpdateForm from './UpdateForm'
+import { FormControl } from "react-bootstrap";
+import { FormGroup } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import axios from "axios";
+import {Route} from 'react-router-dom'
+import './UpdateSong.css'
+
 
 class UpdateSong extends Component {
   constructor() {
     super();
     this.state = {
-      songLyrics: ""
+      song: [],
+      // songLyrics: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,16 +26,16 @@ class UpdateSong extends Component {
     });
   };
 
-  handleSubmit = (event) => {
-    console.log(this.props.params.match.id);
+  handleClick = (event) => {
     event.preventDefault();
-    // axios.post(`https://lyrically123.herokuapp.com/songs/${this.props.params.match._id}`, {lyrics: this.state.songLyrics})
-    // .then (res => {
-    //   console.log(res.data)
-    // })
-    // .then (() => {
-    //   return <Redirect to='/songs' />
-    // })
+    console.log(event.target.name)
+    axios.put(`https://lyrically123.herokuapp.com/songs/${event.target.name}`, {Lyrics: this.props.songLyrics})
+    .then (res => {
+      console.log(res.data)
+    })
+    .then (() => {
+      return <Redirect to='/songs' />
+    })
   };
 
   render() {
@@ -38,7 +46,17 @@ class UpdateSong extends Component {
 
     return (
       <div>
-        <UpdateForm thisSong={thisSong} {...this.props} {...this.state} />
+        <h1>Update Song</h1>
+        <form className='top' name="update">
+          <label>Lyrics:</label>
+          <input
+            className="lyricsInput"
+            type="text"
+            defaultValue={this.state.song.Lyrics}
+            onChange={this.props.handleChange}
+          />
+          <button name={this.state.song._id} onClick={this.handleClick}>Update Lyrics</button>
+        </form> 
 
         <form>
           <button type="submit" name={this.props.match.params.id} onClick={this.props.delete}>Delete</button>

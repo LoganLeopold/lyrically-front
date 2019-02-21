@@ -25,16 +25,16 @@ class ListArtist extends Component {
     let artistList = this.state.artists.map(artist => {
       // console.log(artist);
       return (
-        <div key={artist._id}>
+        <div className='songcard' key={artist._id}>
           <div>
-            Artist: <h2>{artist.Name}</h2>
-            Genre: <h5>{artist.Genre}</h5>
+            Artist: <h2 className='artistname'>{artist.Name}</h2>
+            Genre: <h5 className='artistgenre'>{artist.Genre}</h5>
           </div>
         </div>
       );
     });
     return (
-      <div>
+      <div className='topartist'>
         <h1>Artist List</h1>
         {artistList}
       </div>
