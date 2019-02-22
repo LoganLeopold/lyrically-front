@@ -59,18 +59,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
         <nav className='top'>
-          
-          <Link to={'/songs/'}>Songs</Link>
+         <h1> <Link className='homepage' to='/'>Lyrically</Link></h1>
+       
+        <h2> <Link to={'/songs/'}>Songs</Link></h2> 
          <br></br>
-            <Link to={'/artists/'}>Artists</Link>
+           <h2> <Link to={'/artists/'}>Artists</Link></h2>
           <br></br>
-            <Link to={'/songs/new'}>Create New Song</Link>
+           <h2> <Link to={'/songs/new'}>Create New Song</Link></h2>
           <br></br>
-          <Link to={'/artists/new'}>Create New Artist</Link>
+          <h2><Link to={'/artists/new'}>Create New Artist</Link></h2>
           
-        </nav>        
+        </nav>   
+  
         <main>
           <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
           <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} handleChange={this.handleChange} {...routerProps} {...this.state}/>}/>
@@ -81,6 +82,7 @@ class App extends Component {
         </main>
         
       </div>
+      
     );
   }
 }

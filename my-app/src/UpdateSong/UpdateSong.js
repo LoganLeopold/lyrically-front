@@ -54,7 +54,7 @@ class UpdateSong extends Component {
     console.log('UpdateSong rendered')
 
     return (
-      <div>
+      <div className='up'>
         <h1>Update Song</h1>
         <form  name="update">
           <label>Lyrics:</label>

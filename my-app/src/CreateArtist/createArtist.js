@@ -43,8 +43,8 @@ class createArtist extends Component {
   render() {
 
     return (
-      <div>
-        <form method='POST'>
+      <div> 
+        <form  method='POST'>
           <h1>Create a Song</h1>
           <label>Name</label>
           <input type="text" name="Title" value="" />
