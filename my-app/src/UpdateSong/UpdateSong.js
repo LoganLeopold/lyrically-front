@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import UpdateForm from './UpdateForm'
 import { FormControl } from "react-bootstrap";
 import { FormGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
@@ -16,15 +15,27 @@ class UpdateSong extends Component {
       song: [],
       // songLyrics: ''
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
 
-  handleChange = event => {
-    this.setState({
-      songLyrics: event.target.value
-    });
-  };
+  componentDidMount() {
+    console.log(this.props.match.params.id)
+    axios
+      .get(`https://lyrically123.herokuapp.com/songs/${this.props.match.params.id}`)
+      .then(res => {
+        console.log(res.data); 
+        this.setState({
+          song: res.data
+        });
+        console.log(this.state.song._id)
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    console.log('UpdateSong mounted')
+  }
 
   handleClick = (event) => {
     event.preventDefault();
@@ -39,15 +50,13 @@ class UpdateSong extends Component {
   };
 
   render() {
-    let thisSong = [];
-    this.props.songs.filter(song => {if (song._id === this.props.match.params.id) 
-      {thisSong.push(song);console.log(song.lyrics)}
-    });
+
+    console.log('UpdateSong rendered')
 
     return (
       <div className='up'>
         <h1>Update Song</h1>
-        <form  name="update">
+        <form className='top' name="update">
           <label>Lyrics:</label>
           <input
             className="lyricsInput"
@@ -59,11 +68,46 @@ class UpdateSong extends Component {
         </form> 
 
         <form>
-          <button type="submit" name={this.props.match.params.id} onClick={this.props.delete}>Delete</button>
+          <button
+            type="submit"
+            name={this.props.match.params.id}
+            onClick={this.props.delete}
+          >
+            Delete this Note
+          </button>
         </form>
       </div>
     );
   }
+
+  // upDateDidMount
+  //     render() {
+  //         return (
+  //             <div className="UpdateSong">
+  //                 <form>
+  //                     <FormGroup bsSize="large">
+  //                         <label>Song</label>
+  //                         <FormControl type="text" placeholder="Song" />
+  //                     </FormGroup>
+  //                     <FormGroup bsSize="large">
+  //                         <label>Title</label>
+  //                         <FormControl type="text" placeholder="Title" />
+  //                         <FormGroup bsSize="large">
+  //                         <label>Lyrics</label>
+  //                         <FormControl type="text" placeholder="Lyric" />
+  //                         <p>
+  //                             <Button className="button" bsStyle="primary">update</Button>
+  //                         </p>
+  //                     </FormGroup>
+  //                     {/* <FormGroup bsSize="large">
+  //                         <label>Add to your Artist</label>
+  //                         <FormControl type="text" placeholder="Item or Task" />
+  //                         */}
+  //                     </FormGroup>
+  //                 </form>
+  //             </div>
+  //         );
+  //     }
 }
 
 export default UpdateSong;

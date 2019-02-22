@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
 //import {browserHistory} from 'react-router-dom'
-import browserHistory from 'react-dom'
+// import browserHistory from 'react-dom'
 
 ReactDOM.render(<Router >
     <App />
