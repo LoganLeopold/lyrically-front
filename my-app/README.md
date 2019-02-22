@@ -2,7 +2,8 @@
 - a web application that enable a User to creatively change music lyrics based on the User's input.
 
 ## Screenshot
-
+![](planning/Lyrically SS.png)
+## Website - lyrically.surge.sh
 
 ## Technology Used - Front-End
 
