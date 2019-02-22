@@ -63,15 +63,14 @@ class App extends Component {
         <main>
         <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
         <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} handleChange={this.handleChange} {...routerProps} {...this.state}/>}/>
+        <Route path='/create/songs' exact render={() => <CreateSong />} />
+        {/* //!Create Songs Route Added Here LL */}
         {/* <Route path="/songs/new" exact strict render={routerProps => <CreateSong handleChange={this.handleChange} {...routerProps} {...this.state}/>}/> */}
 
-        {/* //!Create Songs Route Added Here LL */}
-        <Route path='/create/songs' exact render={() => <CreateSong />} />
-    
         <Route path="/artists" exact render={routerProps => <ListArtist {...this.state} {...routerProps} />}/>
-        <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} {...routerProps} {...this.state}/>}/>
-        {/* //! Create Artists Here LL */}
         <Route path='/create/artists' exact render={() => <CreateArtist />} />
+        {/* //! Create Artists Here LL */}
+        {/* <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} {...routerProps} {...this.state}/>}/> */}
         </main>
       
       </div>
