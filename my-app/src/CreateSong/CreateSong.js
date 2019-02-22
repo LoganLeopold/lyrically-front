@@ -42,7 +42,7 @@ class CreateSong extends Component {
   render() {
 
     return (
-      <div>
+      <div className='newsong'>
         <form method='POST'>
           <h1>Create a Song</h1>
           <label>Title</label>
