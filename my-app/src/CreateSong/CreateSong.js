@@ -45,10 +45,11 @@ class CreateSong extends Component {
       <div>
         <form method='POST'>
           <h1>Create a Song</h1>
-          <label>Name</label>
+          <label>Title</label>
           <input type="text" name="Title" value="" />
-          <label>Genre</label>
+          <label>Lyrics</label>
           <input type="text" name="Lyrics" value="" />
+          <label>Artist</label>
           <select name='Artist'>
             {this.props.artists.map(artist => {
               return <option key={artist._id}>{artist.Name}</option>;
