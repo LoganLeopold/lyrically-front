@@ -3,14 +3,14 @@ import axios from 'axios'
 
 class CreateSong extends Component {
 
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         title: '',
-    //         lyrics: '',
-    //         artist: []
-    //     }
-    // }
+    constructor() {
+        super()
+        this.state = {
+            title: '',
+            lyrics: '',
+            artist: []
+        }
+    }
 
     handleClick(event) {
         event.preventDefault();

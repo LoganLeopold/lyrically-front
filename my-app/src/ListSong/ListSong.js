@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './ListSong.css'
-import UpdateSong from "../UpdateSong/UpdateSong";
+// import UpdateSong from "../UpdateSong/UpdateSong";
 
 class ListSong extends Component {
   render() {
@@ -10,9 +10,11 @@ class ListSong extends Component {
       return (
         <div className='songcard' key={song._id}>
           <div>
-            <h1 className='songtitle'>{song.title}</h1>
-            <h1 className='songartist'>{song.artist}</h1>
-            <p>{song.lyrics}</p>
+
+            <h1>{song.Title}</h1>
+            <h1>{song.Artist}</h1>
+            <p>{song.Lyrics}</p>
+        
             <Link to={`/songs/${song._id}`}>
               <button>Change Lyrics</button>
             </Link>
