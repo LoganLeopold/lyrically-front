@@ -35,6 +35,42 @@ class createArtist extends Component {
                 //handle error
                 console.log(response);
             });
+      
+// import React, { Component } from 'react';
+// import { FormControl } from "react-bootstrap"
+// import { FormGroup } from "react-bootstrap"
+// import { Button } from 'react-bootstrap'
+// class CreateArtist extends Component {
+
+//     render() {
+//         return (
+//             <div className="CreateArtist">
+//                 <form>
+//                     <FormGroup bsSize="large">
+//                         <label>Title</label>
+//                         <FormControl type="text" placeholder="Title" />
+//                     </FormGroup>
+//                     <FormGroup bsSize="large">
+//                         <label>Genre</label>
+//                         <FormControl type="text" placeholder="Url" />
+//                         <p>
+//                             <Button className="button" bsStyle="primary">submit</Button>
+//                         </p>
+//                     </FormGroup>
+//                     {/* <FormGroup bsSize="large">
+//                         <label>Create your Artist</label>
+//                         <FormControl type="text" placeholder="Item or Task" />
+//                         <p>
+//                             <Button className="button" bsStyle="primary">submit</Button>
+//                         </p>
+//                     </FormGroup> */}
+//                 </form>
+//             </div>
+//         );
+//     }
+// }
+
+// export default CreateArtist;
 
             //credit for this to this article (if it works ;P): https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data
 
