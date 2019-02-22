@@ -11,7 +11,8 @@ import CreateSong from './CreateSong/CreateSong'
 class App extends Component {
   state = {
     songs: [],
-    // artists: []
+    artists: [],
+    songLyrics: ''
   };
 
   componentDidMount() {
@@ -47,6 +48,13 @@ class App extends Component {
         console.log('Song deleted');
       });
   }
+
+  handleChange = event => {
+    this.setState({
+      songLyrics: event.target.value
+    });
+  };
+
 
   render() {
     return (
