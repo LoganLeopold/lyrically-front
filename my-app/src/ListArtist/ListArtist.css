@@ -16,11 +16,15 @@
   .artistname {
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
+    margin-left: 10px;
+    
   }
   
   .artistgenre {
     color: red;
   }
   .topartist{
-      background: url('https://images.unsplash.com/photo-1525431301226-f824535d4953?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
+      background: url('https://images.unsplash.com/photo-1525431301226-f824535d4953?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+      padding: 10px;
   }
+  
