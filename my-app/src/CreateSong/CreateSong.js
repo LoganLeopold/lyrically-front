@@ -3,14 +3,14 @@ import axios from 'axios'
 
 class CreateSong extends Component {
 
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         title: '',
-    //         lyrics: '',
-    //         artist: []
-    //     }
-    // }
+    constructor() {
+        super()
+        this.state = {
+            title: '',
+            lyrics: '',
+            artist: []
+        }
+    }
 
     handleClick(event) {
         event.preventDefault();
@@ -42,13 +42,14 @@ class CreateSong extends Component {
   render() {
 
     return (
-      <div>
+      <div className='newsong'>
         <form method='POST'>
           <h1>Create a Song</h1>
-          <label>Name</label>
+          <label>Title</label>
           <input type="text" name="Title" value="" />
-          <label>Genre</label>
+          <label>Lyrics</label>
           <input type="text" name="Lyrics" value="" />
+          <label>Artist</label>
           <select name='Artist'>
             {this.props.artists.map(artist => {
               return <option key={artist._id}>{artist.Name}</option>;
