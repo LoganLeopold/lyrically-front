@@ -5,7 +5,9 @@
 
 ![](planning/Lyrically%20SS.png)
 
-Deployed Site - lyrically.surge.sh
+### Deployed Site - 
+
+lyrically.surge.sh
 
 ## Technology Used - Front-End
 
