@@ -1,93 +1,56 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import React, { Component } from "react";
 
-class createArtist extends Component {
-  // constructor() {
-  //     super()
-  //     this.state = {
-  //         title: '',
-  //         lyrics: '',
-  //         artist: []
-  //     }
-  // }
+class CreateArtist extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      Name: '',
+      Genre: ''
+    }
+    this.handleClick = this.handleClick.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
+  }
+ 
+  handleNameChange = event => {
+    this.setState({
+      Name: event.target.value
+    });
+  };
+
+  handleGenreChange = event => {
+    this.setState({
+      Genre: event.target.value
+    })
+  }
 
   handleClick(event) {
     event.preventDefault();
-    let thisurl = "https://lyrically123.herokuapp.com/artists/";
-    let bodyFormData = {
-      Title: event.target.Name,
-      Lyrics: event.target.Lyrics,
-      Artist: event.target.Artist
-    };
-    axios({
-      method: "POST",
-      url: thisurl,
-      data: bodyFormData,
-      config: { headers: { "Content-Type": "multipart/form-data" } }
-    })
+    axios.post('https://lyrically123.herokuapp.com/create/artist',{
+      Name: this.state.Name,
+      Genre: this.state.Genre,
+    },
+    )
       .then(function(response) {
-        //handle success
         console.log(response);
       })
       .catch(function(response) {
-        //handle error
         console.log(response);
       });
 
-    // import React, { Component } from 'react';
-    // import { FormControl } from "react-bootstrap"
-    // import { FormGroup } from "react-bootstrap"
-    // import { Button } from 'react-bootstrap'
-    // class CreateArtist extends Component {
-
-    //     render() {
-    //         return (
-    //             <div className="CreateArtist">
-    //                 <form>
-    //                     <FormGroup bsSize="large">
-    //                         <label>Title</label>
-    //                         <FormControl type="text" placeholder="Title" />
-    //                     </FormGroup>
-    //                     <FormGroup bsSize="large">
-    //                         <label>Genre</label>
-    //                         <FormControl type="text" placeholder="Url" />
-    //                         <p>
-    //                             <Button className="button" bsStyle="primary">submit</Button>
-    //                         </p>
-    //                     </FormGroup>
-    //                     {/* <FormGroup bsSize="large">
-    //                         <label>Create your Artist</label>
-    //                         <FormControl type="text" placeholder="Item or Task" />
-    //                         <p>
-    //                             <Button className="button" bsStyle="primary">submit</Button>
-    //                         </p>
-    //                     </FormGroup> */}
-    //                 </form>
-    //             </div>
-    //         );
-    //     }
-    // }
-
-    // export default CreateArtist;
-
-    //credit for this to this article (if it works ;P): https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data
+    //https://kapeli.com/cheat_sheets/Axios.docset/Contents/Resources/Documents/index helped me realize I don't need a weird format and then I just reverted to the same update state change stuff and got 'er done!
   }
 
   render() {
     return (
       <div> 
-        <form  method='POST'>
-          <h1>Create a Song</h1>
+        <form name="create">
+          <h1>Create An Artist</h1>
           <label>Name</label>
-          <input type="text" name="Title" value="" />
+          <input type="text" name="Name" defaultValue=''onChange={this.handleNameChange}/>
           <label>Genre</label>
-          <input type="text" name="Lyrics" value="" />
-          <select name="Artist">
-            {this.props.artists.map(artist => {
-              return <option key={artist._id}>{artist.Name}</option>;
-            })}
-          </select>
+          <input type="text" name="Genre" defaultValue=''onChange={this.handleGenreChange}/>
           <button onClick={this.handleClick}>Create This Artist</button>
         </form>
       </div>
@@ -95,4 +58,4 @@ class createArtist extends Component {
   }
 }
 
-export default createArtist;
+export default CreateArtist;

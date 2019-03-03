@@ -6,8 +6,8 @@ class CreateSong extends Component {
     constructor() {
         super()
         this.state = {
-            title: '',
-            lyrics: '',
+            Title: '',
+            Lyrics: '',
             artist: []
         }
     }
@@ -46,11 +46,11 @@ class CreateSong extends Component {
         <form method='POST'>
           <h1>Create a Song</h1>
           <label>Title</label>
-          <input type="text" name="Title" value="" />
+          <input type="text" name="Title" defaultValue="" />
           <label>Lyrics</label>
-          <input type="text" name="Lyrics" value="" />
+          <input type="text" name="Lyrics" defaultValue="" />
           <label>Artist</label>
-          <select name='Artist'>
+          <select name='Artist' value=''>
             {this.props.artists.map(artist => {
               return <option key={artist._id}>{artist.Name}</option>;
             })}
