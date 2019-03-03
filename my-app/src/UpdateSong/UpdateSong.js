@@ -22,8 +22,7 @@ class UpdateSong extends Component {
     console.log(this.props.match.params.id)
     axios
       .get(
-        // `https://lyrically123.herokuapp.com/songs/${this.props.match.params.id}`
-        `https://localhost:3000/songs/${this.props.match.params.id}`
+        `https://lyrically123.herokuapp.com/songs/${this.props.match.params.id}`
         )
       .then(res => {
         console.log(res.data); 
