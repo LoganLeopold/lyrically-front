@@ -8,8 +8,14 @@ class CreateSong extends Component {
         this.state = {
             Title: '',
             Lyrics: '',
-            artist: []
+            Artist: '',
+            allArtists: []
         }
+        this.componentDidMount = this.componentDidMount.bind(this)
+    }
+
+    componentDidMount() {
+
     }
 
     handleClick(event) {
@@ -35,22 +41,20 @@ class CreateSong extends Component {
                 console.log(response);
             });
 
-            //credit for this to this article (if it works ;P): https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data
-
     }
 
   render() {
 
     return (
       <div className='newsong'>
-        <form method='POST'>
+        <form name='createSong'>
           <h1>Create a Song</h1>
           <label>Title</label>
           <input type="text" name="Title" defaultValue="" />
           <label>Lyrics</label>
           <input type="text" name="Lyrics" defaultValue="" />
           <label>Artist</label>
-          <select name='Artist' value=''>
+          <select name='Artist' defaultValue=''>
             {this.props.artists.map(artist => {
               return <option key={artist._id}>{artist.Name}</option>;
             })}
