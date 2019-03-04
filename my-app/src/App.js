@@ -28,8 +28,8 @@ class App extends Component {
       
       axios
       .get(
-        // "https://lyrically123.herokuapp.com/artists"
-        'https://localhost:3000/artists'
+        "https://lyrically123.herokuapp.com/artists"
+        // 'https://localhost:3000/artists'
         )
       .then(res => {
         // console.log(res);
