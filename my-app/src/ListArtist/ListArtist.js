@@ -29,14 +29,15 @@ class ListArtist extends Component {
       return (
         <div className="songcard" key={artist._id}>
           <div>
-            Artist: <h2 className="artistname">{artist.Name}</h2>
-            Genre: <h5 className="artistgenre">{artist.Genre}</h5>
+            <strong>Artist: </strong>{artist.Name}
+            <br></br>
+            <strong>Genre: </strong>{artist.Genre}
           </div>
         </div>
       );
     });
     return (
-      <div className="topartist">
+      <div className='artistlist'>
         <h1>Artist List</h1>
         <Link to={'/create/artist'}>
           <button>Create Artist</button>

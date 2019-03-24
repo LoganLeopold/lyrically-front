@@ -3,7 +3,7 @@
 
 ## Screenshot
 
-![](planning/Lyrically%20SS.png)
+![](planning/LyricallySS.png)
 
 ### Deployed Site - 
 

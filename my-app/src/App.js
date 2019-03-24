@@ -5,7 +5,7 @@ import { Link, Route} from "react-router-dom";
 import UpdateSong from "./UpdateSong/UpdateSong";
 import ListSong from "./ListSong/ListSong";
 import ListArtist from './ListArtist/ListArtist';
-import CreateArtist from'./CreateArtist/CreateArtist'
+import CreateArtist from'./CreateArtist/CreateArtist.js'
 import CreateSong from './CreateSong/CreateSong'
 
 class App extends Component {
@@ -65,29 +65,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      
-        <nav className='top'>
+
+        <nav className='navitems'>
          <h1> <Link className='homepage' to='/'>Lyrically</Link></h1>
           <h2> <Link to={'/songs/'}>Songs</Link></h2> 
-          <br></br>
           <h2> <Link to={'/artists/'}>Artists</Link></h2>
-          <br></br>
           <h2> <Link to={'create/song'}>Create New Song</Link></h2>
-          <br></br>
           <h2><Link to={'/create/artist'}>Create New Artist</Link></h2>
-          
-        </nav>   
-        <main>
+        </nav>
+
+        <main className='mainbody'>
         <Route path="/songs" exact render={routerProps => <ListSong delete={this.delete} {...this.state} {...routerProps} />}/>
         <Route path="/songs/:id" exact render={routerProps => <UpdateSong delete={this.delete} handleChange={this.handleChange} {...routerProps} {...this.state}/>}/>
         <Route path='/create/song' exact render={() => <CreateSong />} />
-        {/* //!Create Songs Route Added Here LL */}
-        {/* <Route path="/songs/new" exact strict render={routerProps => <CreateSong handleChange={this.handleChange} {...routerProps} {...this.state}/>}/> */}
 
         <Route path="/artists" exact render={routerProps => <ListArtist {...this.state} {...routerProps} />}/>
         <Route path='/create/artist' exact render={(routerProps) => <CreateArtist {...routerProps}{...this.state}/>} />
-        
-       
         </main>
       
       </div>

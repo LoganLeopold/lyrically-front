@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { FormControl } from "react-bootstrap";
-import { FormGroup } from "react-bootstrap";
-import { Button } from "react-bootstrap";
 import axios from "axios";
-import {Route} from 'react-router-dom'
+// import {Route} from 'react-router-dom'
 import './UpdateSong.css'
 
 

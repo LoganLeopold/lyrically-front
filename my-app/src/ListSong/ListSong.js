@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import './ListSong.css'
-// import UpdateSong from "../UpdateSong/UpdateSong";
 
 class ListSong extends Component {
   render() {
@@ -23,7 +22,7 @@ class ListSong extends Component {
       );
     });
     return (
-      <div className='toplist'>
+      <div>
           <h1>Song List</h1>
         {songList}
       </div>

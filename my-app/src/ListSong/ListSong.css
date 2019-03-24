@@ -1,36 +1,27 @@
 .songcard {
-    border: 2px solid black;
-    border-radius: 3px;
-    /* margin-top: 50px;
-    margin-left: 5px;
-    margin-right: 5px; */
-    margin: 10px;
-    background-color: white;
-    /* width: 100px; */
-    display: inline-block;
-    width: auto;
-    height: auto;
-    padding: 10px; 
-  }
-  
-  .songtitle {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 25px;
-    width: 250px
-  }
-  
-  .songartist {
-    color: red;
-  }
-  button{
-      color: white;
-      background: rgb(0, 110, 255);
-      border: 1px solid yellow;
-      border-radius: 15px;
-      font-weight: bold;
-  }
-  .toplist{
-      background: url('https://d1yn1kh78jj1rr.cloudfront.net/image/preview/rDtN98Qoishumwih/music_10064212-err-1215-allint_SB_PM.jpg');
-      height: 600px;
-      padding-top: 10px;
-  }
+  font-family: 'Raleway', sans-serif;
+  border: 2px solid black;
+  margin: 10px;
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+
+/* .songtitle {
+  font-size: 25px;
+  width: 250px;
+} */
+
+/* .songartist {
+  color: red;
+} */
+
+button {
+  color: white;
+  font-size: 15px;
+  background: rgb(0, 110, 255);
+  border: 1px solid black;
+  border-radius: 15px;
+  font-weight: bold;
+}
