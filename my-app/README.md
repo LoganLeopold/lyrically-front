@@ -1,5 +1,6 @@
 # Lyrically 
-- a web application that enable a User to creatively change music lyrics based on the User's input.
+- This is a group project for GA's WDI 27. 
+Lyrically is an application that enable users to creatively redesign music lyrics.
 
 ## Screenshot
 
