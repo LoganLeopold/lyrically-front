@@ -1,9 +1,7 @@
-/* .up{
-   background: url('http://www.freepptbackgrounds.net/wp-content/uploads/2013/06/Music-Consideration-Backgrounds-800x600.jpg');
-   padding: 10px;  
-} */
-/* .lyricsInput{
-    background: rgb(143, 223, 143);
-    font-weight: bold;
-} */
-
+.button-forms {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+    align-items: center;
+    
+}

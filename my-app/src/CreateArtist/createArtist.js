@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import './createArtist.css'
 
 class CreateArtist extends Component {
 
@@ -44,15 +45,20 @@ class CreateArtist extends Component {
 
   render() {
     return (
-      <div> 
-        <form name="create">
-          <h1>Create An Artist</h1>
-          <label>Name</label>
-          <input type="text" name="Name" defaultValue=''onChange={this.handleNameChange}/>
-          <label>Genre</label>
-          <input type="text" name="Genre" defaultValue=''onChange={this.handleGenreChange}/>
+      <div>
+        <div>
+          <form name="create">
+            <h1>Create An Artist</h1>
+            <label>Name: </label>
+            <input type="text" name="Name" defaultValue=''onChange={this.handleNameChange}/>
+            <br></br>
+            <label>Genre: </label>
+            <input type="text" name="Genre" defaultValue=''onChange={this.handleGenreChange}/>
+          </form>
+        </div>
+        <div className='create-btn'>
           <button onClick={this.handleClick}>Create This Artist</button>
-        </form>
+        </div>
       </div>
     );
   }

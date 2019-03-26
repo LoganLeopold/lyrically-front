@@ -61,17 +61,13 @@ class UpdateSong extends Component {
             defaultValue={this.state.song.Lyrics}
             onChange={this.props.handleChange}
           />
-          <button name={this.state.song._id} onClick={this.handleClick}>Update Lyrics</button>
         </form> 
-
-        <form>
-          <button
-            type="submit"
-            onClick={this.props.delete}
-          >
-            Delete this Note
-          </button>
-        </form>
+        <div className='button-forms'>
+          <form>
+          <button name={this.state.song._id} onClick={this.handleClick}>Update Lyrics</button>
+          <button type="submit" onClick={this.props.delete}>Delete this Note</button>
+          </form>
+        </div>
       </div>
     );
   }

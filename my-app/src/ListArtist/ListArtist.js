@@ -39,10 +39,11 @@ class ListArtist extends Component {
     return (
       <div className='artistlist'>
         <h1>Artist List</h1>
+        {artistList}
+        <br></br>
         <Link to={'/create/artist'}>
           <button>Create Artist</button>
         </Link>
-        {artistList}
       </div>
     );
   }

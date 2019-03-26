@@ -1,3 +1,6 @@
-.newart{
-    background: red;
+.create-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
 }
