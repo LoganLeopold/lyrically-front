@@ -24,9 +24,3 @@ lyrically.surge.sh
 - User should be able to update an existing Song lyrics.
 
 - User should be able to delete any record of lyric.
-
-## Unsolved Issues
-
-- The ability to improve on React functionality.
-
-- Ability to properly put in Axios requests.
